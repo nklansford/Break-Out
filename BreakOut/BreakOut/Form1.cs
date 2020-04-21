@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
-    public partial class Form1 : Form
+    public partial class BreakOut : Form
     {
-        public Form1()
+        public BreakOut()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void score_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
