@@ -203,7 +203,7 @@
             this.Controls.Add(this.paddle);
             this.Name = "BreakOut";
             this.Text = "BreakOut";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.paddle)).EndInit();
