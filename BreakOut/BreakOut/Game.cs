@@ -26,5 +26,20 @@ namespace BreakOut
         {
 
         }
+
+        private void keyIsDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void keyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

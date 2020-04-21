@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.paddle = new System.Windows.Forms.PictureBox();
             this.losingWall = new System.Windows.Forms.PictureBox();
             this.topWall = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,7 @@
             this.brick4 = new System.Windows.Forms.PictureBox();
             this.brick5 = new System.Windows.Forms.PictureBox();
             this.score = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.paddle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.losingWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topWall)).BeginInit();
@@ -167,13 +169,19 @@
             // 
             this.score.AutoSize = true;
             this.score.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.score.ForeColor = System.Drawing.Color.LightCyan;
             this.score.Location = new System.Drawing.Point(28, 702);
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(85, 34);
             this.score.TabIndex = 11;
             this.score.Text = "Score:";
             this.score.Click += new System.EventHandler(this.score_Click);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 20;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // BreakOut
             // 
@@ -196,6 +204,8 @@
             this.Name = "BreakOut";
             this.Text = "BreakOut";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.paddle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.losingWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topWall)).EndInit();
@@ -226,6 +236,7 @@
         private System.Windows.Forms.PictureBox brick4;
         private System.Windows.Forms.PictureBox brick5;
         private System.Windows.Forms.Label score;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
