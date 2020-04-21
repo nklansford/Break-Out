@@ -9,6 +9,6 @@ namespace BreakOut
 {
     public class Wall : PictureBox
     {
-        
+        // just inherits picturebox
     }
 }
