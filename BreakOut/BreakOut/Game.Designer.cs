@@ -35,11 +35,11 @@
             this.rightWall = new Wall();
             this.bottomWall = new Wall();
             this.ball = new System.Windows.Forms.PictureBox();
-            this.brick1 = new System.Windows.Forms.PictureBox();
-            this.brick2 = new System.Windows.Forms.PictureBox();
-            this.brick3 = new System.Windows.Forms.PictureBox();
-            this.brick4 = new System.Windows.Forms.PictureBox();
-            this.brick5 = new System.Windows.Forms.PictureBox();
+            this.brick1 = new Brick();
+            this.brick2 = new Brick();
+            this.brick3 = new Brick();
+            this.brick4 = new Brick();
+            this.brick5 = new Brick();
             this.score = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.paddle)).BeginInit();
@@ -58,7 +58,9 @@
             // paddle
             // 
             this.paddle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.paddle.Location = new System.Drawing.Point(81, 310);
+            this.paddle.GoDown = false;
+            this.paddle.GoUp = false;
+            this.paddle.Location = new System.Drawing.Point(81, 309);
             this.paddle.Name = "paddle";
             this.paddle.Size = new System.Drawing.Size(21, 193);
             this.paddle.TabIndex = 0;
@@ -108,7 +110,7 @@
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Coral;
-            this.ball.Location = new System.Drawing.Point(226, 340);
+            this.ball.Location = new System.Drawing.Point(243, 365);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(24, 23);
             this.ball.TabIndex = 5;
@@ -230,11 +232,11 @@
         private Wall rightWall;
         private Wall bottomWall;
         private System.Windows.Forms.PictureBox ball;
-        private System.Windows.Forms.PictureBox brick1;
-        private System.Windows.Forms.PictureBox brick2;
-        private System.Windows.Forms.PictureBox brick3;
-        private System.Windows.Forms.PictureBox brick4;
-        private System.Windows.Forms.PictureBox brick5;
+        private Brick brick1;
+        private Brick brick2;
+        private Brick brick3;
+        private Brick brick4;
+        private Brick brick5;
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Timer timer;
     }
