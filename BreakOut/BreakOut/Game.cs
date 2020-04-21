@@ -13,7 +13,7 @@ namespace BreakOut
     public partial class BreakOut : Form
     {
         ////////// Variables ///////////
-        int score = 0;
+        int gameScore = 0;
 
         ////////// Events and Methods ///////////
         public BreakOut()
@@ -36,7 +36,7 @@ namespace BreakOut
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            score.Text = "Score: " + score;
+            score.Text = "Score: " + gameScore;
         }
     }
 }
