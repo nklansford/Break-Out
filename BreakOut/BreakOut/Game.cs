@@ -13,15 +13,22 @@ namespace BreakOut
     public partial class BreakOut : Form
     {
         ////////// Variables ///////////
-        int gameScore = 0;
+        private int gameScore;
 
-        ////////// Events and Methods ///////////
+        ////////// Methods ///////////
         public BreakOut()
         {
             InitializeComponent();
-            Paddle paddle = new Paddle();
+            UpdateScore(0);
         }
 
+        public void UpdateScore(int brickScore)
+        {
+            gameScore = gameScore + brickScore;
+            score.Text = "Score: " + gameScore;
+        }
+
+        ////////// Events ///////////
         private void Game_Load(object sender, EventArgs e)
         {
 
@@ -31,12 +38,35 @@ namespace BreakOut
         {
 
         }
+        private void keyIsDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                paddle.GoUp = true;
+            }
 
-        // key up and down events used to be here, moved to paddle class
+            if (e.KeyCode == Keys.Down)
+            {
+                paddle.GoDown = true;
+            }
+        }
+
+        private void keyIsUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                paddle.GoUp = false;
+            }
+
+            if (e.KeyCode == Keys.Down)
+            {
+                paddle.GoDown = false;
+            }
+        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            score.Text = "Score: " + gameScore;
+            paddle.Slide();
         }
     }
 }

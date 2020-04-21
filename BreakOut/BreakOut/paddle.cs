@@ -7,38 +7,27 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
-    public class Paddle
+    public class Paddle : PictureBox
     {
         ////////// Variables ///////////
-        bool goUp;
-        bool goDown;
-        int speed = 5;
+
+        public bool GoUp { get; set; }
+        public bool GoDown { get; set; }
+        private int speed = 15;
+
 
 
         ////////// Events and Methods ///////////
-        private void keyIsDown(object sender, KeyEventArgs e)
+        public void Slide()
         {
-            if (e.KeyCode == Keys.Up)
+            if(GoUp)
             {
-                goUp = true;
+                Top -= speed;
             }
 
-            if (e.KeyCode == Keys.Down)
+            if(GoDown)
             {
-                goDown = true;
-            }
-        }
-
-        private void keyIsUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-                goUp = false;
-            }
-
-            if (e.KeyCode == Keys.Down)
-            {
-                goDown = false;
+                Top += speed;
             }
         }
     }

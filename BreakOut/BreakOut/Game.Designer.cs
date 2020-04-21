@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.paddle = new System.Windows.Forms.PictureBox();
+            this.paddle = new Paddle();
             this.losingWall = new System.Windows.Forms.PictureBox();
             this.topWall = new System.Windows.Forms.PictureBox();
             this.rightWall = new System.Windows.Forms.PictureBox();
@@ -224,7 +224,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox paddle;
+        private Paddle paddle;
         private System.Windows.Forms.PictureBox losingWall;
         private System.Windows.Forms.PictureBox topWall;
         private System.Windows.Forms.PictureBox rightWall;
