@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.paddle = new Paddle();
-            this.losingWall = new System.Windows.Forms.PictureBox();
-            this.topWall = new System.Windows.Forms.PictureBox();
-            this.rightWall = new System.Windows.Forms.PictureBox();
-            this.bottomWall = new System.Windows.Forms.PictureBox();
+            this.losingWall = new LosingWall();
+            this.topWall = new Wall();
+            this.rightWall = new Wall();
+            this.bottomWall = new Wall();
             this.ball = new System.Windows.Forms.PictureBox();
             this.brick1 = new System.Windows.Forms.PictureBox();
             this.brick2 = new System.Windows.Forms.PictureBox();
@@ -225,10 +225,10 @@
         #endregion
 
         private Paddle paddle;
-        private System.Windows.Forms.PictureBox losingWall;
-        private System.Windows.Forms.PictureBox topWall;
-        private System.Windows.Forms.PictureBox rightWall;
-        private System.Windows.Forms.PictureBox bottomWall;
+        private LosingWall losingWall;
+        private Wall topWall;
+        private Wall rightWall;
+        private Wall bottomWall;
         private System.Windows.Forms.PictureBox ball;
         private System.Windows.Forms.PictureBox brick1;
         private System.Windows.Forms.PictureBox brick2;

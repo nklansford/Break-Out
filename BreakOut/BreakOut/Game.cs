@@ -20,6 +20,7 @@ namespace BreakOut
         {
             InitializeComponent();
             UpdateScore(0);
+            paddle.SetBounds(topWall.Bottom, bottomWall.Top);
         }
 
         public void UpdateScore(int brickScore)
@@ -67,6 +68,16 @@ namespace BreakOut
         private void timer_Tick(object sender, EventArgs e)
         {
             paddle.Slide();
+
+            if(paddle.Bounds.IntersectsWith(topWall.Bounds))
+            {
+                paddle.GoUp = false;
+            }
+
+            if(paddle.Bounds.IntersectsWith(bottomWall.Bounds))
+            {
+                paddle.GoDown = false;
+            }
         }
     }
 }

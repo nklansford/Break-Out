@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
-    public class Paddle : PictureBox
+    public class Paddle : Wall
     {
         ////////// Variables ///////////
 
@@ -15,6 +15,8 @@ namespace BreakOut
         public bool GoDown { get; set; }
         private int speed = 15;
 
+        private int topBound;
+        private int bottomBound;
 
 
         ////////// Events and Methods ///////////
@@ -22,13 +24,25 @@ namespace BreakOut
         {
             if(GoUp)
             {
-                Top -= speed;
+                if (Top > topBound)
+                {
+                    Top -= speed;
+                }
             }
 
             if(GoDown)
             {
-                Top += speed;
+                if(Bottom < bottomBound)
+                {
+                    Top += speed;
+                }
             }
+        }
+
+        public void SetBounds(int topBounds, int bottomBounds)
+        {
+            topBound = topBounds;
+            bottomBound = bottomBounds;
         }
     }
 }
