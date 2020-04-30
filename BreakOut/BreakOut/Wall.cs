@@ -9,6 +9,16 @@ namespace BreakOut
 {
     public class Wall : PictureBox
     {
-        // just inherits picturebox
+        public bool DoesBounce { get; protected set; }
+        
+        public Wall()
+        {
+            DoesBounce = true;
+        }
+
+        public virtual void WallHit()
+        {
+            // boink
+        }
     }
 }

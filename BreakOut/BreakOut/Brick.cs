@@ -9,6 +9,12 @@ namespace BreakOut
 {
     public class Brick : Wall
     {
+        public override void WallHit()
+        {
+            DoesBounce = false;
+            Visible = false;
 
+
+        }
     }
 }
