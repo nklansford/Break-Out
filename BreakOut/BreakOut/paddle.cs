@@ -13,7 +13,7 @@ namespace BreakOut
 
         public bool GoUp { get; set; }
         public bool GoDown { get; set; }
-        private int speed = 15;
+        private int speed = 20;
 
         private int topBound;
         private int bottomBound;

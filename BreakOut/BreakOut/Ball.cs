@@ -14,8 +14,8 @@ namespace BreakOut
 
         public Ball()
         {
-            speedX = 10;
-            speedY = 10;
+            speedX = 12;
+            speedY = 12;
         }
 
         public void BallMove()
@@ -26,16 +26,24 @@ namespace BreakOut
 
         public bool IsBallHitting(Wall wall)
         {
-            if(Bounds.IntersectsWith(wall.Bounds))
+            if (wall.Bounds.IntersectsWith(Bounds))
             {
+                int leftDifference = Math.Abs(wall.Right - Left);
+                int rightDifference = Math.Abs(wall.Left - Right);
+                int topDifference = Math.Abs(wall.Top - Bottom);
+                int bottomDifference = Math.Abs(wall.Bottom - Top);
+
+                if(Math.Min(leftDifference, rightDifference) < Math.Min(topDifference, bottomDifference))
+                {
+                    speedX = -speedX;
+                }
+                else
+                {
+                    speedY = -speedY;
+                }
                 return true;
             }
             return false;
-            //if()
-            //{
-            //    ballX = -ballX;
-            //    ballY = -ballY;
-            //}
         }
     }
 }

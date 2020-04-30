@@ -15,6 +15,7 @@ namespace BreakOut
         ////////// Variables ///////////
         private int gameScore;
         List<Wall> allWalls;
+        private int brickCounter;
 
         ////////// Methods ///////////
         public Game()
@@ -23,6 +24,7 @@ namespace BreakOut
             UpdateScore(0);
             paddle.SetBounds(topWall.Bottom, bottomWall.Top);
             InitializeWallList();
+            brickCounter = 55;
         }
 
         public void InitializeWallList()
@@ -151,29 +153,45 @@ namespace BreakOut
             {
                 if(item.DoesBounce && ball.IsBallHitting(item))
                 {
-                    item.WallHit();
                     if(item is Brick)
                     {
-                        if(item.Tag == "points10")
+                        item.DoesBounce = false;
+                        item.Visible = false;
+                        if (item.Tag == "points10")
                         {
                             UpdateScore(10);
                         }
-                        if (item.Tag == "points20")
+                        else if(item.Tag == "points20")
                         {
                             UpdateScore(20);
                         }
-                        if (item.Tag == "points30")
+                        else if(item.Tag == "points30")
                         {
                             UpdateScore(30);
                         }
-                        if (item.Tag == "points40")
+                        else if(item.Tag == "points40")
                         {
                             UpdateScore(40);
                         }
-                        if (item.Tag == "points50")
+                        else if(item.Tag == "points50")
                         {
                             UpdateScore(50);
                         }
+
+                        brickCounter--;
+
+                        if (brickCounter <= 0)
+                        {
+                            timer.Stop();
+                            YouWin.Visible = true;
+                        }
+
+                    }
+
+                    else if(item is LosingWall)
+                    {
+                        timer.Stop();
+                        YouLose.Visible = true;
                     }
                 }
             }

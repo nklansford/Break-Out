@@ -9,7 +9,7 @@ namespace BreakOut
 {
     public class Wall : PictureBox
     {
-        public bool DoesBounce { get; protected set; }
+        public bool DoesBounce { get; set; }
         
         public Wall()
         {
