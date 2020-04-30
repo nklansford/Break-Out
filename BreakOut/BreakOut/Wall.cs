@@ -7,6 +7,12 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
+    /// <summary>
+    /// Noelle Lansford
+    /// Jennifer Halder
+    /// 
+    /// A generic wall for more specific walls to inherit from
+    /// </summary>
     public class Wall : PictureBox
     {
         public bool DoesBounce { get; set; }
@@ -18,7 +24,7 @@ namespace BreakOut
 
         public virtual void WallHit()
         {
-            // boink
+            
         }
     }
 }

@@ -7,6 +7,10 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
+    /// <summary>
+    /// A type of wall
+    /// (Advanced Topic Polymorphism)
+    /// </summary>
     public class Brick : Wall
     {
         

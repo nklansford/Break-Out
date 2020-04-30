@@ -7,6 +7,12 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
+    /// <summary>
+    /// Noelle Lansford
+    /// Jennifer Halder
+    /// 
+    /// Adds capabilty for a ball that checks if it hits walls
+    /// </summary>
     public class Ball : PictureBox
     {
         private int speedX;

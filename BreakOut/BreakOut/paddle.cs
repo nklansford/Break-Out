@@ -7,6 +7,12 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
+    /// <summary>
+    /// Noelle Lansford
+    /// Jennifer Halder
+    /// 
+    /// Adds capability for a movable paddle
+    /// </summary>
     public class Paddle : Wall
     {
         ////////// Variables ///////////

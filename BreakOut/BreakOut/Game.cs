@@ -11,6 +11,12 @@ using System.Windows.Forms;
 
 namespace BreakOut
 {
+    /// <summary>
+    /// Noelle Lansford
+    /// Jennifer Halder
+    /// 
+    /// The Game of Breakout
+    /// </summary>
     public partial class Game : Form
     {
         ////////// Variables ///////////
