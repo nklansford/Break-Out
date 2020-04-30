@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,9 @@ namespace BreakOut
         private int gameScore;
         List<Wall> allWalls;
         private int brickCounter;
+        SoundPlayer backgroundMusic = new SoundPlayer(Resource1.background_music);
+        SoundPlayer loseSound = new SoundPlayer(Resource1.loseSound);
+        SoundPlayer winSound = new SoundPlayer(Resource1.winSound);
 
         ////////// Methods ///////////
         public Game()
@@ -25,6 +29,7 @@ namespace BreakOut
             paddle.SetBounds(topWall.Bottom, bottomWall.Top);
             InitializeWallList();
             brickCounter = 55;
+            backgroundMusic.PlayLooping();
         }
 
         public void InitializeWallList()
@@ -97,6 +102,7 @@ namespace BreakOut
             gameScore = gameScore + brickScore;
             score.Text = "Score: " + gameScore;
         }
+
 
         ////////// Events ///////////
         private void Game_Load(object sender, EventArgs e)
@@ -183,7 +189,9 @@ namespace BreakOut
                         if (brickCounter <= 0)
                         {
                             timer.Stop();
+                            backgroundMusic.Stop();
                             YouWin.Visible = true;
+                            winSound.Play();
                         }
 
                     }
@@ -191,7 +199,9 @@ namespace BreakOut
                     else if(item is LosingWall)
                     {
                         timer.Stop();
+                        backgroundMusic.Stop();
                         YouLose.Visible = true;
+                        loseSound.Play();
                     }
                 }
             }
